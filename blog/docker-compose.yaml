@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "15432:5432"
+    env_file: conteiner.env
+  web:
+    build: .
+    image: backend_image
+    restart: always
+    command: ["./wait-for-it.sh", "db:5432", "--", "./start_web.sh"]
+    volumes:
+      - .:/backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file: conteiner.env
+volumes:
+  postgres_data:

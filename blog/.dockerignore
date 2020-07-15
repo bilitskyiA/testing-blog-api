@@ -1,0 +1,14 @@
+#
+**/__pycache__
+**/*.py[cod]
+**/*.log
+
+.git
+.idea
+.env
+.venv
+venv
+.cache
+builds
+postgres-data
+static

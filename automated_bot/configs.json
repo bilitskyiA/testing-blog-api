@@ -1,0 +1,5 @@
+{
+  "max_users_num": 10,
+  "max_posts_num_per_user": 5,
+  "max_votes_num_per_user": 3
+}
